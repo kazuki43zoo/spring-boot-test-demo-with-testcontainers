@@ -38,7 +38,8 @@ class HttpclientTestDemoApplicationTests {
         .when(HttpRequest.request().withPath("/hello"))
         .respond(HttpResponse.response().withBody("Hello!"));
 
-    Assertions.assertThat(myClient.hello()).isEqualTo("Hello!");
+    String message = myClient.hello();
+    Assertions.assertThat(message).isEqualTo("Hello!");
   }
 
 
