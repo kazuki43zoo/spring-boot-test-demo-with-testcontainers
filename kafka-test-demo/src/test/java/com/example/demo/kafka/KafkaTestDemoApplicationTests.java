@@ -32,7 +32,6 @@ class KafkaTestDemoApplicationTests {
 
   @DynamicPropertySource
   static void setup(DynamicPropertyRegistry registry) {
-    System.out.println(kafka.getBootstrapServers());
     registry.add("spring.kafka.bootstrap-servers", kafka::getBootstrapServers);
   }
 
