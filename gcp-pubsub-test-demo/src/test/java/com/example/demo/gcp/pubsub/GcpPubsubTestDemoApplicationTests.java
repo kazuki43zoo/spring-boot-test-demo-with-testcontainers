@@ -32,8 +32,8 @@ import java.util.concurrent.TimeUnit;
 class GcpPubsubTestDemoApplicationTests {
 
   @Container
-  static final PubSubEmulatorContainer pubsub
-      = new PubSubEmulatorContainer(DockerImageName.parse("gcr.io/google.com/cloudsdktool/cloud-sdk:316.0.0-emulators"));
+  static final PubSubEmulatorContainer pubsub = new PubSubEmulatorContainer(
+      DockerImageName.parse("gcr.io/google.com/cloudsdktool/cloud-sdk:316.0.0-emulators"));
 
   @Autowired
   PubSubOperations pubSubOperations;
@@ -82,7 +82,9 @@ class GcpPubsubTestDemoApplicationTests {
   @Test
   void contextLoads() throws InterruptedException {
     pubSubOperations.publish("demoTopic", "Hello World!");
-    Assertions.assertThat(messages.poll(10, TimeUnit.SECONDS)).isEqualTo("Hello World!");
+
+    String message = messages.poll(10, TimeUnit.SECONDS);
+    Assertions.assertThat(message).isEqualTo("Hello World!");
   }
 
 }
