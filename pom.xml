@@ -16,6 +16,7 @@
         <module>httpclient-test-demo</module>
         <module>kafka-test-demo</module>
         <module>gcp-pubsub-test-demo</module>
+        <module>aws-sqs-test-demo</module>
     </modules>
 
 </project>
