@@ -11,6 +11,7 @@ Demo project for testing spring-boot application using Testcontainers.
 
 * [Apache Kafka](./kafka-test-demo)
 * [Google Pub/Sub](./gcp-pubsub-test-demo)
+* [AWS SQS](./aws-sqs-test-demo)
 
 ## Web
 
